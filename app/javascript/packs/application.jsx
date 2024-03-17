@@ -7,7 +7,16 @@ import ReactDOM from 'react-dom';
 import 'stylesheets/base.css';
 
 import App from './components/App';
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
+
 
 document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(<App />, document.body.appendChild(document.createElement('div')));
+  ReactDOM.render(
+    <QueryClientProvider client={queryClient}>
+
+      <App />
+    </QueryClientProvider>,
+    document.body.appendChild(document.createElement('div')));
 });
