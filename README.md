@@ -32,6 +32,12 @@ On another terminal, run your server:
 bundle exec rails s
 ```
 
+On another terminal, run your webpack-dev-server:
+
+```
+bin/webpack-dev-server
+```
+
 The relevant webhook will be registed once ```TrelloWrapper``` is initialized.
 
 Your server will be available at [localhost:3000](http://localhost:3000). Changes made to the code should reload automatically.
