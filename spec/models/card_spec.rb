@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Card, type: :model do
-  # TODO: Test your card model logic here (if present).
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "should not save a card without a name" do
+    card = Card.new
+    card.description = 'Card description'
+    card.list = List.new
+    expect { card.save! }.to raise_error(ActiveRecord::RecordInvalid)
+  end
 end
