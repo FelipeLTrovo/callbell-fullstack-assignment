@@ -25,8 +25,11 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # Webpacker
 gem 'webpacker', '5.2.1'
 
+# Trello Rest Client
+gem 'ruby-trello', '4.2.0'
+
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'
+gem 'rack-cors'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
