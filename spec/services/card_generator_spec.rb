@@ -4,14 +4,12 @@ RSpec.describe CardGenerator, type: :model do
   before(:all) { Rails.application.load_seed }
 
   describe '.generate_card' do
-    it 'generates a card linked to the first list if the list payload is not provided' do
+    it 'should not generate a card if the list_id is not provided' do
 
       card = CardGenerator.generate_card({'name'=> 'Card Name'})
       
       expect(card).to be_a(Card)
-      expect { card.save }.to change(Card, :count).by(1)
-      expect(card.name).to eq('Card Name')
-      expect(card.list).to eq(List.first)
+      expect { card.save }.to change(Card, :count).by(0)
     end
 
     it 'generates a card linked to the specified list when the list payload is provided' do

@@ -6,7 +6,7 @@ RSpec.describe CardDestroyer, type: :model do
   describe '#destroy_card' do
     it 'deletes a card from database' do
 
-      card = CardGenerator.generate_card({'name'=> 'Card Name'})
+      card = CardGenerator.generate_card({'name'=> 'Card Name', 'list_id'=> List.last.id})
       
       expect(card).to be_a(Card)
       expect { card.save }.to change(Card, :count).by(1)

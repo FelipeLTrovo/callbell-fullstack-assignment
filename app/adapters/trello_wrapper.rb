@@ -9,6 +9,7 @@ class TrelloWrapper
                        member_token: ENV['TRELLO_TOKEN']
                       ) 
     @board = @client.find(:boards, ENV['TRELLO_BOARD_ID'])
+    delete_webhook(webhooks.first['id']) if webhooks.any? && webhooks.first['idModel'] != @board.id
     create_webhook if webhooks.empty?
   end
 
